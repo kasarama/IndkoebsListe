@@ -12,7 +12,17 @@
 </head>
 <body>
 
-Velkommen til din on-line IndkøbsListe
+
+<h2>Velkommen til din on-line IndkøbsListe</h2>
+
+<form action="LogInServlet", method="post">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
 </body>
 </html>
