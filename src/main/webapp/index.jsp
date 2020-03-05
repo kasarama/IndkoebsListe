@@ -15,14 +15,19 @@
 
 <h2>Velkommen til din on-line IndkøbsListe</h2>
 
-<form action="LogInServlet", method="post">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
 
-    <input type="submit" value="Submit">
+${requestScope.besked}
+
+<form action="LogInServlet", method="post">
+    <label for="fname">brugernav:</label><br>
+    <input type="text" id="fname" name="navn"><br>
+    <label for="lname">kodeord:</label><br>
+    <input type="text" id="lname" name="kodeord"><br>
+
+    <input type="submit" value="login">
 </form>
 
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+<p>BLah blah blah</p>
 
 </body>
 </html>
