@@ -23,8 +23,11 @@ public class LogINServlet extends HttpServlet {
             Map<String, String> brugerMap = new HashMap<>();
 
             brugerMap.put("test", "test");
+            brugerMap.put("admin", "1234");
 
             servletContext.setAttribute("brugerMap", brugerMap);
+
+
         }
 
         if ( ((Map<String, String>)servletContext.getAttribute("brugerMap")).containsKey(navn) ){
@@ -37,10 +40,18 @@ public class LogINServlet extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/OpretBruger.jsp").forward(request, response);
         }
 
-        if ( ((Map<String, String>)servletContext.getAttribute("brugerMap")).get(navn).equalsIgnoreCase(kodeord) ){
-            //todo gå til IndkøbsListen
-            response.getWriter().println("Du er logget ind");
-            request.getRequestDispatcher("WEB-INF/HuskeListe.jsp").forward(request, response);
+        if ( ((Map<String, String>)servletContext.getAttribute("brugerMap")).get(navn).equalsIgnoreCase(kodeord) ) {
+
+            if (navn.equalsIgnoreCase("admin")) {
+                //todo gå til adminside
+                request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request, response);
+
+
+            } else {
+                //todo gå til IndkøbsListen
+                response.getWriter().println("Du er logget ind");
+                request.getRequestDispatcher("WEB-INF/HuskeListe.jsp").forward(request, response);
+            }
 
         } else {
 
@@ -51,6 +62,8 @@ public class LogINServlet extends HttpServlet {
         }
 
     }
+
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

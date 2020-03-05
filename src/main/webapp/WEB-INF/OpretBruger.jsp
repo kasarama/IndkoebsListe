@@ -24,14 +24,13 @@ ${requestScope.besked}
 <br>
 
 
-<form action="OpretBrugerServlet
-", method="post">
-    <label for="fname">brugernav:</label><br>
+<form action="OpretBrugerServlet", method="post">
+    <label for="fname">brugernavn:</label><br>
     <input type="text" id="fname" name="navn"><br>
     <label for="lname">kodeord:</label><br>
     <input type="text" id="lname" name="kodeord"><br>
 
-    <input type="submit" value="login">
+    <input type="submit" value="opret ny bruger">
 </form>
 
 
