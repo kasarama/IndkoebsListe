@@ -32,9 +32,9 @@ public class LogINServlet extends HttpServlet {
             response.getWriter().println("bruger findes i databasen, hurra!");
 
         } else {
-            response.getWriter().println("brugernavn findes ikke");
-            request.setAttribute("besked", "det brugernavn var forkert, prøv igen");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+          //  response.getWriter().println("brugernavn findes ikke");
+            request.setAttribute("besked", "Opret dig som ny bruger");
+            request.getRequestDispatcher("WEB-INF/OpretBruger.jsp").forward(request, response);
         }
 
         if ( ((Map<String, String>)servletContext.getAttribute("brugerMap")).get(navn).equalsIgnoreCase(kodeord) ){
